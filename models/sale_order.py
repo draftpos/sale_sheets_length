@@ -33,6 +33,7 @@ class SaleOrder(models.Model):
                         node.set("readonly", f"({old_readonly}) or parent.allow_sheets_length")
                 else:
                     node.set("readonly", "parent.allow_sheets_length")
+                node.set("force_save", "1")
                 
             # 3. Inject sheets and length into the form view of order_line
             for node in doc.xpath("//field[@name='order_line']//form//field[@name='product_uom_qty']"):
@@ -50,5 +51,6 @@ class SaleOrder(models.Model):
                         node.set("readonly", f"({old_readonly}) or parent.allow_sheets_length")
                 else:
                     node.set("readonly", "parent.allow_sheets_length")
+                node.set("force_save", "1")
                 
         return arch, view
