@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_order_form_sale_sheets_length" model="ir.ui.view">
+        <field name="name">sale.order.form.sale.sheets.length</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <!-- Injections handled via Python _get_view directly to avoid parent scoping issues -->
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="allow_sheets_length" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

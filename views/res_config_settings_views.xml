@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_sale_sheets_length" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.sale.sheets.length</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="sale.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//app[@name='sale_management']" position="inside">
+                <block title="Sheets &amp; Length" name="sale_sheets_length_setting_container">
+                    <setting help="Show Sheets and Length columns on sales orders">
+                        <field name="allow_sheets_length"/>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>
